@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost:27017/users';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/users';
 
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
