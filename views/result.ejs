@@ -97,6 +97,7 @@
         </div>
 
         <!--job start-->
+        <% if(user){ user.search = ''}%>
         <% if(jobs.length === 0){ %>
             <div class="job clearfix" id="no-result"><p>No result! Please try to search another keywords, or
                     <% if(!user || user.title === "jobseeker"){ %>

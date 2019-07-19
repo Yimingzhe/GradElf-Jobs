@@ -3,7 +3,7 @@ var Recruiter = require('../models/recruiters');
 var CompanyReview = require('../models/companyReview');
 var UserReview = require('../models/userReview');
 var Job = require('../models/jobs');
-var password = require('myLibs/password');
+var password = require('../myLibs/password');
 
 exports.employee = function (req, res, next) {
     var reviewId;

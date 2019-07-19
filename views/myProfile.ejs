@@ -91,6 +91,7 @@
                     <% for(var i = 0; i < requests.length ; i++){ %>
                         <div class="request clearfix" id="request1">
                             <a href="/jobDescription/<%= requests[i]._id %>"><%= requests[i].title %></a>
+                            <% user.search = 'own-request'%>
                             <ul>
                                 <li class="company"><span class="glyphicon glyphicon-blackboard list-icon"></span>
                                     <span><%= requests[i].name %></span></li>

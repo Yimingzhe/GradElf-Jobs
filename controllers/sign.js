@@ -1,4 +1,4 @@
-var password = require('myLibs/password');
+var password = require('../myLibs/password');
 var Recruiter = require('../models/recruiters');
 var User = require('../models/users');
 var pathLib = require('path');

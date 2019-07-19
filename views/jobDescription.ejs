@@ -58,8 +58,8 @@
                         <%= job.date.getMonth()+1%> / <%= job.date.getFullYear() %></span></li>
             </ul>
         </div>
-        <% if(!user || user.title==='jobseeker'){ %>
-        <a href="/companyInfo">
+        <% if(!user || user.title==='jobseeker' && user.search!=='own-request'){ %>
+        <a href="/companyInfo/<%= job.email %>">
             <img src="<%= job.companyImage %>" class="company-pic" alt="company icon"/>
         </a>
         <% } %>
@@ -67,7 +67,7 @@
 
     <div class="jd-text">
         <p><%= job.description %></p>
-        <% if(user && user.title==='recruiter'){ %>
+        <% if(user && user.title==='recruiter'&& job.cv){ %>
         <div class="cv">
             <p>CV of the job seeker</p>
             <% if(job.cv.substring(job.cv.length-3,job.cv.length)!=="pdf"){ %>

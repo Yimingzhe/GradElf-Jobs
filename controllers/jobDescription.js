@@ -4,24 +4,21 @@ var Request = require('../models/requests');
 exports.show = function (req, res) {
     var jobId = req.url.substring(req.url.lastIndexOf('/')+1);
     // for jobseekers or users who didn't log in -> jobs
-    console.log(req.session.user);
-    if(!req.session.user || req.session.user.title==='jobseeker'){
+    if(!req.session.user || (req.session.user.title==='jobseeker'&&!req.session.user.search) || req.session.user.search==='own-job'){
         Job.findById(jobId)
             .then(function (jobData) {
-                console.log("aaa"+jobData);
                 res.render('jobDescription', {
                     user: req.session.user,
                     job: jobData
                 });
             });
-    }else{
+    }else if(req.session.user.title==='recruiter' || req.session.user.search==='own-request'){
         // for recruiters -> requests
         Request.findById(jobId)
             .then(function(requestData){
-                console.log("rrr"+requestData);
                 res.render('jobDescription', {
                     user: req.session.user,
-                    job: requestData
+                    job:  requestData
                 })
             })
     }

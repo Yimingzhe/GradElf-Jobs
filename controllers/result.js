@@ -79,10 +79,12 @@ exports.show = function (req, res, next) {
             // job title, city
             Request.find({
                     title: eval('/' + keysearch + '/i'),
-                    location: eval('/' + city + '/i')
+                    location: eval('/' + city + '/i'),
+                    jobType: jobType,
+                    date: postDate
                 }, null,
                 {
-                    sort: {date: -1}
+                    sort: condition
                 })
                 .then(function (resolve) {
                     return res.render('result', {
