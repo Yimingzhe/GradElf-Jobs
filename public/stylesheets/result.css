@@ -127,7 +127,7 @@ html{
     width: 100px;
     border-bottom: 1px solid #f89e2d;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 15px 0;
 }
 #to-top a{
     text-decoration: none;

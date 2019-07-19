@@ -151,10 +151,12 @@
         <% } %>
         <!--job end-->
 
-        <!--to top-->
-        <div id="to-top">
-            <a href="#">&nbsp;&nbsp;Back to Top&nbsp;&nbsp;</a>
-        </div>
+        <% if(jobs.length > 5){ %>
+            <!--to top-->
+            <div id="to-top">
+                <a href="#">&nbsp;&nbsp;Back to Top&nbsp;&nbsp;</a>
+            </div>
+        <% } %>
 
     </div>
     <!--job list end-->
