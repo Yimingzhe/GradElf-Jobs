@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/companyInfo.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!--import companyInfo js-->
+    <script src="/javascripts/companyInfo.js"></script>
+</head>
+<body>
+<!--header-->
+<%- include("partials/elfHeader") %>
+
+<!--company information start-->
+<div class="companyInfo">
+    <div class="companyInfo-header clearfix">
+        <img src="<%= company.avatar %>" alt="company icon">
+        <div class="companyInfo-rate">
+            <h3><%= company.company_name %></h3>
+            <div>
+                <% var sum = 0;
+                for(var i=0; i<reviews.length; i++){
+                    sum += reviews[i].rating;
+                }%>
+                <%for(var j=0; j<Math.round(sum/reviews.length); j++){%>
+                <span class="glyphicon glyphicon-star"></span>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!--the tab part-->
+    <div class="companyInfo-tab">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">About</a>
+            </li>
+            <li role="presentation">
+                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Photos</a>
+            </li>
+            <li role="presentation">
+                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Reviews</a>
+            </li>
+        </ul>
+        <!--the description part start-->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <span class="hint">Company address: </span>
+                <span><%= company.address %></span><br>
+                <span class="hint">Email: </span>
+                <span><%= company.email %></span><br>
+                <span class="hint">Number of employees: </span>
+                <span><%= company.employees_num %></span><br>
+                <div class="des-content">
+                    <%= company.description %>
+                </div>
+            </div>
+            <!--the description part end-->
+
+            <!--the photo part start-->
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="companyInfo-photos">
+                    <div class="big-photo">
+                    </div>
+                    <div class="small-photo">
+                        <ul>
+                            <li class="small-photo-btn">
+                                <button id="small-photo-btn1"><span class="glyphicon glyphicon-chevron-left"></span>
+                                </button>
+                            </li>
+                            <% for(var i=0; i<5; i++){ %>
+                            <li class="small-pic">
+                                <div></div>
+                            </li>
+                            <% } %>
+                            <li class="small-photo-btn">
+                                <button id="small-photo-btn2"><span class="glyphicon glyphicon-chevron-right"></span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul id="photoList" style="display: none">
+                            <% for(var i=0; i<company.photos.length; i++){ %>
+                                <li >
+                                    <%= company.photos[i] %>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix row">
+                    <form class="companyInfo-photos-btn col-lg-offset-6 col-lg-6" method="post" enctype="multipart/form-data">
+                        <label for="companyInfo-img">Upload Photos</label>
+                        <input type="file" id="companyInfo-img" name="upload" accept="image/png, image/jpeg, image/gif, image/jpg"
+                               multiple="multiple">
+                        <input type="submit" id="upload" value="submit">
+                    </form>
+                </div>
+            </div>
+            <!--the photo part end-->
+
+            <!--the review part start-->
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <a class="clearfix" href="/review/<%= company.email %>">
+                    <div id="review-btn">Post a review</div>
+                </a>
+                <% for(var i=0; i<reviews.length; i++){ %>
+                <% if (reviews[i].posted) {%>
+                    <div class="review">
+                        <div class="review-whole">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="review-name"><%= reviews[i].author%></span>
+                            <div class="review-stars">
+                                <% for(var j=0; j<reviews[i].rating; j++){ %>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4 class="review-title"><%= reviews[i].title%></h4>
+                            <p class="review-text">
+                               <%= reviews[i].Review %>
+                            </p>
+                        </div>
+                    </div>
+                <% } %>
+                <% } %>
+
+                <!--page-->
+                <div id="review-page" class="col-sm-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--the review part end-->
+
+        </div>
+    </div>
+    <!--the tab part end-->
+
+</div>
+<!--company information end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/postJob.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/javascripts/post.js"></script>
+</head>
+<body>
+<!--company index header-->
+<%- include("partials/companyHeader") %>
+
+<!--post start-->
+<div class="container post">
+    <form action="" method="post" class="post-form" id="post-job">
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-2 col-xs-12"><h2>Post Job</h2></div>
+        </div>
+        <div class="row">
+            <label for="company-name" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Company name: </label>
+            <input type="text" id="company-name" class="col-sm-5 col-xs-12" name="company" placeholder="Company name"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="post-title" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Position title: </label>
+            <input type="text" id="post-title"class="col-sm-5 col-xs-12" name="position" placeholder="Position title"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="post-loc" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Location: </label>
+            <input type="text" id="post-loc" class="col-sm-5 col-xs-12" name="location" placeholder="Location"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="post-loc" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Job Type: </label>
+            <select name="jobType" class="col-sm-5 col-xs-12">
+                <option value="Graduate" selected>Graduate</option>
+                <option value="Internship">Internship</option>
+                <option value="Part-time">Part-time</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="description" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>Description:
+            </label>
+            <textarea name="description" id="description" class="col-sm-5 col-xs-12" name="description"
+                      placeholder="Write the description here" rows="12" required="required"></textarea>
+        </div>
+        <div class="row upload-img">
+            <label for="company-img" class="col-sm-offset-2 col-sm-2 col-xs-12">
+                <span class="must">*</span>Upload logo: </label>
+            <input type="file" id="company-img" class="col-sm-5 col-xs-12" name="logo"
+                   accept="image/png, image/jpeg, image/gif, image/jpg" required="required">
+        </div>
+        <div class="row">
+            <label for="post-min" class="col-sm-offset-2 col-sm-2 col-xs-12">Salary range: </label>
+            <input type="number" id="post-min" class="col-sm-2 col-xs-12" name="salaryMin" placeholder="minimum">
+            <span class="col-sm-1 col-xs-12">TO</span>
+            <input type="number" id="post-max" name="salaryMax" placeholder="maximum" class="col-sm-2 col-xs-12">
+        </div>
+        <div class="row">
+            <label for="reg-field" class="col-sm-offset-2 col-sm-2 col-xs-12">Job field: </label>
+            <select name="field" id="reg-field" class="col-sm-5 col-xs-12">
+                <option value="IT" selected> IT</option>
+                <option value="Sales"> Sales</option>
+                <option value="marketing">Marketing</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="security">Security</option>
+                <option value="training">Training</option>
+                <option value="project management">Project Management</option>
+                <option value="m-e">Management And Executive</option>
+                <option value="engineering">Engineering</option>
+                <option value="hr">Human Resources</option>
+                <option value="finance">Finance</option>
+                <option value="insurance">Insurance</option>
+                <option value="mechanical">Mechanical Jobs</option>
+                <option value="editorial"> Editorial Jobs</option>
+                <option value="education"> Education</option>
+                <option value="architecture">Architecture</option>
+                <option value="others">Other Jobs</option>
+            </select>
+        </div>
+        <div class="row">
+            <input id="upload" class="col-xs-offset-4 col-xs-4" type="submit" value="Upload">
+        </div>
+    </form>
+</div>
+<!--post end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

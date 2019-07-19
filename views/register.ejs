@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script src="/javascripts/register.js"></script>
+</head>
+<body>
+<!--header-->
+<%- include("partials/elfHeader") %>
+
+<!--register start-->
+<div class="container register">
+    <form class="register-form" enctype="multipart/form-data">
+        <!--job seeker-->
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-2 col-xs-12"><h2>Register</h2></div>
+        </div>
+        <div class="row">
+            <label for="reg-first-name" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                First name: </label>
+            <input type="text" id="reg-first-name" name="firstName" placeholder="First name" class="col-sm-5 col-xs-12"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="reg-surname" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Last name: </label>
+            <input type="text" id="reg-surname" name="surname" placeholder="Last name" class="col-sm-5 col-xs-12"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="reg-email" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                E-mail: </label>
+            <input type="email" id="reg-email" name="email" placeholder="E-mail" class="col-sm-5 col-xs-12" required="required">
+        </div>
+        <div class="row">
+            <label for="reg-confirm-email" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Confirm E-mail: </label>
+            <input type="email" id="reg-confirm-email" placeholder="Enter your e-mail again"
+                   class="col-sm-5 col-xs-12" required="required"><span id="email-hint"></span>
+        </div>
+        <div class="row">
+            <label for="reg-password" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Password: </label>
+            <input type="password" id="reg-password" name="password"  placeholder="Password" class="col-sm-5 col-xs-12"
+                   required="required">
+        </div>
+        <div class="row">
+            <label for="reg-confirm-password" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>
+                Confirm Password: </label>
+            <input type="password" id="reg-confirm-password" placeholder="Enter your password again"
+                   class="col-sm-5 col-xs-12" required="required"><span id="password-hint"></span>
+        </div>
+        <div class="row">
+            <label for="description" class="col-sm-offset-2 col-sm-2 col-xs-12"><span class="must">*</span>Description: </label>
+            <textarea name="description" id="description" placeholder="Write the description here"
+                      class="col-sm-5 col-xs-12" rows="10" required="required"></textarea>
+        </div>
+        <div class="row">
+            <label for="reg-field" class="col-sm-offset-2 col-sm-2 col-xs-12">Job field: </label>
+            <select name="regField" id="reg-field" class="col-sm-5 col-xs-12">
+                <option value="IT"> IT</option>
+                <option value="Sales"> Sales</option>
+                <option value="marketing">Marketing</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="security">Security</option>
+                <option value="training">Training</option>
+                <option value="project management">Project Management</option>
+                <option value="m-e">Management And Executive</option>
+                <option value="engineering">Engineering</option>
+                <option value="hr">Human Resources</option>
+                <option value="finance">Finance</option>
+                <option value="insurance">Insurance</option>
+                <option value="mechanical">Mechanical Jobs</option>
+                <option value="editorial"> Editorial Jobs</option>
+                <option value="education"> Education</option>
+                <option value="architecture">Architecture</option>
+                <option value="others">Other Jobs</option>
+            </select>
+        </div>
+        <div class="row upload-img">
+            <label for="post-avatar" class="col-sm-offset-2 col-sm-2 col-xs-12"> Upload avatar: </label>
+            <input type="file" name="avatar" accept="image/png, image/jpeg, image/gif, image/jpg"
+                   class="col-sm-5 col-xs-12">
+        </div>
+
+        <!--recruiter-->
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-10 col-xs-12">
+                <h5>If you are a recruiter, please fill in the fields below</h5>
+            </div>
+        </div>
+
+        <div class="recruiter">
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-10 col-xs-12">
+                    <input id="reg-recruiter"  name="check" type="checkbox">
+                    <label for="reg-recruiter"> Sign up as a recruiter</label>
+                </div>
+            </div>
+            <div class="row">
+                <label for="recruiter-company" class="col-sm-offset-2 col-sm-2 col-xs-12">Company name: </label>
+                <input type="text" id="recruiter-company" name="company" placeholder="Company name" class="col-sm-5 col-xs-12">
+            </div>
+            <div class="row">
+                <label for="recruiter-address" class="col-sm-offset-2 col-sm-2 col-xs-12">Company address: </label>
+                <input type="text" id="recruiter-address" name="address" placeholder="Company address" class="col-sm-5 col-xs-12">
+            </div>
+            <div class="row">
+                <label for="recruiter-number" class="col-sm-offset-2 col-sm-2 col-xs-12">Contact number: </label>
+                <input type="number" id="recruiter-number" name="contact" placeholder="Contact number" class="col-sm-5 col-xs-12">
+            </div>
+            <div class="row">
+                <label for="recruiter-employees" class="col-sm-offset-2 col-sm-2 col-xs-12">Number of employees </label>
+                <input type="number" id="recruiter-employees" name="num" class="col-sm-5 col-xs-12">
+            </div>
+        </div>
+        <div class="row">
+            <input id="submit" class="col-xs-offset-4 col-xs-4" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<!--register end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

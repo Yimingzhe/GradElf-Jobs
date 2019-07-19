@@ -1,0 +1,32 @@
+body{
+    background-color: white;
+    color: #2a3c54;
+}
+.edit{
+    background-color: #f8f8f8;
+    margin: 20px auto;
+    padding: 10px;
+}
+.edit p{
+    color: #f89e2d;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.edit .row{
+    margin: 20px;
+}
+#submit{
+    background-color: #f89e2d;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    font-size: 22px;
+    border: 1px solid #f89e2d;
+    border-radius: 5px;
+}
+#submit:hover{
+    background-color: darkorange;
+    font-size: 24px;
+    border: 1px solid darkorange;
+}

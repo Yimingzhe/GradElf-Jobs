@@ -1,0 +1,92 @@
+/*search start*/
+.elf-search {
+    height: 500px;
+    background: url("../images/bg.jpg") no-repeat;
+    background-position: center center;
+    /*background-attachment :fixed;*/
+    background-size: cover;
+}
+.job-search h2{
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    font-family: Cambria;
+    font-weight: 700;
+}
+.job-search h3{
+    padding-top: 90px;
+    text-align: center;
+    font-family: Cambria;
+    color: white;
+}
+
+.job-search form{
+    height: 50px;
+    padding-top: 50px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.job-search input,.job-search button, .job-search select{
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+}
+.job-search select{
+    padding: 8px;
+}
+
+.job-search button{
+    font-size: 18px;
+    color: #325462;
+    font-weight: 700;
+}
+#advance{
+    padding-top: 80px;
+    padding-left: 200px;
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+/*search end*/
+
+/*tools start*/
+.elf-tools{
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px;
+}
+.elf-tools .row div{
+    padding: 20px;
+}
+.elf-tools span{
+    font-size: 40px;
+    color: #325462;
+}
+.elf-tools p{
+    width: 250px;
+    text-align: center;
+    margin: 10px auto 0px;
+    color: #666;
+    line-height: 24px;
+}
+.elf-tools button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: #fff;
+    border: 1px solid #8f8c94;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #666;
+}
+.elf-tools a:hover{
+    text-decoration: none;
+}
+.elf-tools button:hover{
+    font-weight: 700;
+    color: #325462;
+}
+/*tools end*/

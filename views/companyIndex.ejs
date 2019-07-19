@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/companyIndex.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<!--company index header-->
+<%- include("partials/companyHeader") %>
+
+<!--search start-->
+<section class="elf-search">
+    <div class="job-search container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-education"></span>&nbsp; &nbsp;GradElf helps you find talents!</h2>
+        </div>
+        <div class="row">
+            <form action="/result" method="get">
+                <span class="col-sm-2"></span>
+                <input class="col-sm-3 col-xs-12" type="text" name="keysearch" class="form-control" placeholder="Job title">
+                <input class="col-sm-3 col-xs-6" type="text" name="city" class="form-control" placeholder="City">
+                <button class="col-sm-2 col-xs-6" type="submit" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search hidden-lg hidden-xs"></span>
+                    <span class="visible-lg visible-xs">Search</span> </button>
+            </form>
+        </div>
+        <div class="row">
+            <h3 class="hidden-xs">This is a professional website for graduates and companies!</h3>
+        </div>
+    </div>
+</section>
+<!--search end-->
+
+<!--tools start-->
+<section class="elf-tools">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <a href="/recruiterProfile"><span class="glyphicon glyphicon-file"></span>
+                <p>Now, create your own profile,
+                    <br>let more talents notice you!</p><button>Create Profile</button></a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <a href="/postJob"><span class="glyphicon glyphicon-list-alt"></span>
+                <p>Create jobs at GradElf,
+                    <br>to find talents you need!</p><button>Create Job</button></a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <a href="/recruiterReviews"><span class="glyphicon glyphicon-thumbs-up"></span>
+                <p>Comment on the talent you work with,
+                    <br>help others know them more!</p><button>My Reviews</button></a>
+        </div>
+    </div>
+</section>
+<!--tools end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

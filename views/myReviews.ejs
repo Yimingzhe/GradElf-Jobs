@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/myReviews.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<!--header-->
+<% if(user.title === "jobseeker"){%>
+    <%- include("partials/elfHeader") %>
+<% }else{%>
+    <%- include("partials/companyHeader") %>
+<% } %>
+
+<!--my reviews part start-->
+<section class="myReviews">
+    <div class="myReviews-header">
+        <h3>My Reviews</h3>
+    </div>
+    <div class="myReviews-container">
+        <div class="myReviews-tab">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#posted-reviews" aria-controls="posted-reviews" role="tab" data-toggle="tab">Posted
+                        Reviews</a>
+                </li>
+                <li role="presentation">
+                    <a href="#draft-reviews" aria-controls="draft-reviews" role="tab" data-toggle="tab">Draft Review</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <!--the posted reviews part start-->
+                <div role="tabpanel" class="tab-pane active" id="posted-reviews">
+                    <% for(var i=0; i<reviews.length; i++){ %>
+                    <% if(reviews[i].posted){ %>
+                    <!--review start-->
+                    <div class="oneReview">
+                        <span>Review: </span>
+                        <% if(reviews[i].company){%>
+                            <a href="/companyInfo/<%= reviews[i].company%>"><%= reviews[i].company %></a>
+                        <% }else if(reviews[i].employee){ %>
+                            <a href="/employeeInfo/<%= reviews[i].employee%>"><%= reviews[i].employee %></a>
+                        <%}%>
+                        <div class="review">
+                            <div class="review-content">
+                                <h4 class="review-title"><%= reviews[i].title %></h4>
+                                <div class="review-stars">
+                                    <% for(var j=0; j<reviews[i].rating; j++){%>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <% } %>
+                                </div>
+                                <p class="review-text">
+                                    <%= reviews[i].Review %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--review end-->
+                        <% } %>
+                    <% } %>
+                </div>
+                <!--the posted reviews part end-->
+
+                <!--the draft reviews part start-->
+                <div role="tabpanel" class="tab-pane" id="draft-reviews">
+                <% for(var i=0; i<reviews.length; i++){ %>
+                <% if(!reviews[i].posted){ %>
+                <!--review start-->
+                <div class="oneReview">
+                    <span>Review: </span>
+                    <% if(reviews[i].company){%>
+                        <a href="/companyInfo/<%= reviews[i].company%>"><%= reviews[i].company %></a>
+                    <% }else if(reviews[i].employee){ %>
+                        <a href="/employeeInfo/<%= reviews[i].employee%>"><%= reviews[i].employee %></a>
+                    <%}%>
+                    <div class="review">
+                        <div class="review-content">
+                            <h4 class="review-title"><%= reviews[i].title %></h4>
+                            <div class="review-stars">
+                                <% for(var j=0; j<reviews[i].rating; j++){%>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <% } %>
+                            </div>
+                            <p class="review-text">
+                                <%= reviews[i].Review %>
+                            </p>
+                        </div>
+                        <div class="clearfix">
+                            <% if(reviews[i].company){%>
+                                <a class="review-delete" href="/review/delete/<%= reviews[i].company%>/<%= reviews[i]._id%>">
+                                <div>Delete</div>
+                                </a>
+                            <% }else if(reviews[i].employee){ %>
+                                <a class="review-delete" href="/review/employee/delete/<%= reviews[i].employee%>/<%= reviews[i]._id%>">
+                                <div>Delete</div>
+                                </a>
+                            <%}%>
+                            <% if(reviews[i].company){%>
+                                <a class="review-edit" href="/review/<%= reviews[i].company%>/<%= reviews[i]._id%>">
+                                    <div>Edit</div>
+                                </a>
+                            <% }else if(reviews[i].employee){ %>
+                                <a class="review-edit" href="/review/employee/<%= reviews[i].employee%>/<%= reviews[i]._id%>">
+                                    <div>Edit</div>
+                                </a>
+                            <%}%>
+                        </div>
+                    </div>
+                </div>
+                <!--review end-->
+                <% } %>
+                <% } %>
+                </div>
+                <!--the draft reviews part end-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--my reviews part end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

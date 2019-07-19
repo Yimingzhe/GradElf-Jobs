@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/jobDescription.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<!--header-->
+<% if (!user || user.title==="jobseeker"){ %>
+    <%- include("partials/elfHeader") %>
+<% } else { %>
+    <%- include("partials/companyHeader") %>
+<% } %>
+
+<!--job descrition start-->
+<div id="jd" class="clearfix">
+    <h2><%= job.position||job.title %></h2>
+    <div class="clearfix jd-top">
+        <div class="jd-list">
+            <ul>
+                <% if (!user || user.title==="jobseeker"){ %>
+                    <a href="/companyInfo/<%= job.email %>">
+                <% } else { %>
+                    <a href="/employeeInfo/<%= job.email %>">
+                <% } %>
+                    <li class="company"><span class="glyphicon glyphicon-blackboard list-icon"></span>
+                        <span class="list-hint">Name: </span><span><%= job.company||job.name %></span></li>
+                </a></a>
+                <li class="job-location"><span class="glyphicon glyphicon-map-marker list-icon"></span>
+                    <span class="list-hint">Location: </span><span><%= job.location %></span></li>
+                <% if(job.salary.length !== 0 ){ %>
+                    <li class="salary"><span class="glyphicon glyphicon-gbp list-icon"></span>
+                        <span class="list-hint">Salary range: <%= job.salary[0] %> to <%= job.salary[1] %></span></li>
+                <% } %>
+                <li class="type"><span class="glyphicon glyphicon-tags list-icon"></span>
+                    <span class="list-hint">Job type: </span><span><%= job.jobType %></span></li>
+                <li class="post-date"><span class="glyphicon glyphicon-send list-icon"></span>
+                    <span class="list-hint">Date posted: </span><span><%= job.date.getDate() %> /
+                        <%= job.date.getMonth()+1%> / <%= job.date.getFullYear() %></span></li>
+            </ul>
+        </div>
+        <% if(!user || user.title==='jobseeker'){ %>
+        <a href="/companyInfo">
+            <img src="<%= job.companyImage %>" class="company-pic" alt="company icon"/>
+        </a>
+        <% } %>
+    </div>
+
+    <div class="jd-text">
+        <p><%= job.description %></p>
+        <% if(user && user.title==='recruiter'){ %>
+        <div class="cv">
+            <p>CV of the job seeker</p>
+            <% if(job.cv.substring(job.cv.length-3,job.cv.length)!=="pdf"){ %>
+                <img src="<%= job.cv %>" alt="cv">
+            <% } %>
+            <% if(job.cv.substring(job.cv.length-3,job.cv.length)==="pdf"){%>
+                <object data="<%= job.cv %>" type="application/pdf" width="100%" height="900px">
+                    <embed src="<%= job.cv %>" type="application/pdf" width="100%" height="900px">
+                </object>
+                <br><br>
+                <p>If you cannot view the file, please click here to download:
+                    <a href="<%= job.cv %>">Download PDF</a></p>
+            <% } %>
+        </div>
+        <% } %>
+        <ul class="contact-info">
+            <li><b>contact: </b><%= job.email %></li>
+            <% var jobId = job._id.toString().substring(job._id.toString().length-8) %>
+            <li><b>Job ID:</b> <%= jobId %></li>
+        </ul>
+    </div>
+
+    <div class="jd-btn">
+       <a href="mailto:<%= job.email %>">
+           <button class="job-apply">
+               <% if (!user || user.title==="jobseeker"){ %>
+                   Apply
+               <% } else { %>
+                   Contact
+               <% } %>
+           </button>
+       </a>
+    </div>
+</div>
+<!--job description end-->
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

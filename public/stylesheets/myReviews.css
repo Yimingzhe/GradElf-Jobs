@@ -1,0 +1,82 @@
+body{
+    background-color: #f8f8f8;
+}
+/*my review*/
+.myReviews{
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    min-height: 100%;
+}
+.myReviews-header h3{
+    color: #2a3c54;
+    font-weight: 700;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.oneReview{
+    margin: 20px;
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+.myReviews-tab .nav-tabs a{
+    font-size: 16px;
+    font-weight: 700;
+}
+.myReviews-tab .nav-tabs a:hover{
+    color: #f89e2d;
+}
+/*posted review part start*/
+.oneReview a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+.oneReview a:hover{
+    color: #f89e2d;
+}
+.review{
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-top: 1px solid lightgrey;
+}
+.review-stars{
+    display: inline-block;
+    margin-left: 10px;
+}
+.review-title, .review-stars{
+    display: inline-block;
+}
+.review-stars span{
+    color: #f89e2d;
+    font-size: 18px;
+}
+.review-content h4{
+    color: #2a3c54;
+    font-size: 20px;
+}
+.review-content p{
+    line-height: 28px;
+}
+/*posted review part end*/
+
+/*draft review part start*/
+.review-edit div, .review-delete div{
+    float: right;
+    text-align: center;
+    margin: 6px;
+    width: 80px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 30px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid lightgrey;
+}
+.review-edit div:hover, .review-delete div:hover{
+    background-color: #f89e2d;
+    color: white;
+    border: 1px solid #f89e2d;
+}
+/*draft review part end*/

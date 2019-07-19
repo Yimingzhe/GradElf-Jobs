@@ -1,0 +1,43 @@
+body{
+    background-color: white;
+    color: #2a3c54;
+}
+.post{
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin: 20px auto;
+    padding: 10px;
+    min-height: 90%;
+}
+.post h2{
+    color: #f89e2d;
+    margin-top: -10px;
+}
+.post .row{
+    margin: 20px;
+}
+.must{
+    color: red;
+    margin-right: 5px;
+}
+#post-cv{
+    padding: 0;
+}
+.upload-img input{
+    background-color: #fff;
+    border: 1px solid lightgrey;
+}
+#upload{
+    background-color: #f89e2d;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    font-size: 22px;
+    border: 1px solid #f89e2d;
+    border-radius: 5px;
+}
+#upload:hover{
+    background-color: darkorange;
+    font-size: 24px;
+    border: 1px solid darkorange;
+}

@@ -1,0 +1,120 @@
+body{
+    background-color: #f8f8f8;
+}
+/*description part start*/
+.myProfile{
+    margin: 20px;
+    background-color: #ffffff;
+    padding-bottom: 60px;
+    overflow: hidden;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+.userName h3{
+    color: #2a3c54;
+    font-size: 26px;
+    padding-top: 35px;
+}
+.myProfile-header img{
+    padding: 10px;
+    float: left;
+    height: 110px;
+}
+.myProfile-tab{
+    padding-top: 30px;
+}
+.myProfile-tab a{
+    color: #2a3c54;
+    font-size: 16px;
+    font-weight: 700;
+}
+.myProfile-tab a:hover{
+    color: #f89e2d;
+}
+.des-content{
+    margin: 20px;
+}
+#home .hint{
+    font-size: 16px;
+    font-weight: 700;
+    color: #f89e2d;
+    line-height: 30px;
+}
+#home, #profile, #messages{
+    padding: 20px;
+    background-color: white;
+}
+.tab-content #home button{
+    float: right;
+    width: 60px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+}
+.tab-content #home button:hover{
+    color: white;
+    background-color: #f89e2d;
+    border: 1px solid #f89e2d;
+}
+/*description part end*/
+
+/*posted jobs part start*/
+#request-btn{
+    margin-right: 10px;
+    float: right;
+    width: 180px;
+    height: 40px;
+    background-color: white;
+    color: #2a3c54;
+    font-size: 16px;
+    border: 1px solid #2a3c54;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 40px;
+}
+#request-btn:hover{
+    color: white;
+    background-color: #f89e2d;
+    border: 1px solid #f89e2d;
+}
+#request-page{
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    color: #2a3c54;
+}
+#request-page a{
+    width: 50px;
+    text-align: center;
+    color: #2a3c54;
+    font-weight: 400;
+}
+.request ul li{
+    margin-top: 10px;
+}
+.request ul li span{
+    margin-left: 5px;
+}
+.job-description{
+    margin-top: 20px;
+    color: #2a3c54;
+}
+.request-list .request{
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.request-list .list-icon{
+    color: darkgray;
+}
+.request-list .request a{
+    font-size: 26px;
+    text-decoration: none;
+    color: #2a3c54;
+}
+.request-list .request a:hover{
+    color: #f89e2d;
+}
+/*posted jobs part end*/

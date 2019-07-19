@@ -1,0 +1,104 @@
+/*reset css start*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    font-size: 14px;
+    font-family: Arial;
+    color: #333;
+    height: 100%;
+}
+a{
+    color: #666;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/*reset css end*/
+
+/*topBar start*/
+.elf-top img{
+    width: 50px;
+    height: 50px;
+}
+.elf-top{
+    margin-bottom: 0px;
+}
+.elf-top #brand{
+    color: #325462;
+    font-family: Cambria;
+    font-size: 30px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+}
+.elf-top .collapse ul li a{
+    color: #325462;
+}
+#brand-m{
+    color: #325462;
+    font-family: Cambria;
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+}
+/*topBar end*/
+
+/*nav start*/
+.elf-nav{
+    height: 50px;
+    line-height: 50px;
+    background-color: #2a3c54;
+}
+#nav-bar a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 20px;
+    color: white;
+}
+#nav-bar a:hover, #nav-bar a:focus{
+    border-bottom: 5px solid white;
+    background-color: #325462;
+    color: #feca76;
+}
+.elf-nav .container{
+    height: 40px;
+}
+/*nav end*/
+
+/*footer start*/
+.elf-footer li{
+    display: inline-block;
+    padding-right: 30px;
+}
+.elf-footer a{
+    text-decoration: none;
+    color: white;
+}
+.elf-footer a:hover{
+    color: #feca76;
+}
+.elf-footer ul{
+    margin-bottom: 0px;
+    padding-top: 25px;
+}
+.elf-footer div{
+    height: 50px;
+    padding: 0px 20px;
+    color: white;
+    background-color: #2a3c54;
+}
+.elf-footer div span{
+    line-height: 50px;
+    font-size: 12px;
+    color: lightgrey;
+}
+/*footer end*/

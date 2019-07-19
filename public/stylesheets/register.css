@@ -1,0 +1,60 @@
+body{
+    background-color: white;
+    color: #2a3c54;
+}
+.register{
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin: 20px auto;
+    padding: 10px;
+}
+.register input{
+    height: 30px;
+    border: 1px solid lightgrey;
+}
+.register textarea{
+    border: 1px solid lightgrey;
+}
+.register h2{
+    color: #f89e2d;
+    margin-top: -10px;
+}
+.register .row{
+    margin: 20px;
+}
+.register h5{
+    color: #f89e2d;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 15px 0 -5px;
+}
+#password-hint, #email-hint{
+    color: red;
+}
+.must{
+    color: red;
+    margin-right: 5px;
+}
+#submit{
+    background-color: #f89e2d;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    font-size: 22px;
+    border: 1px solid #f89e2d;
+    border-radius: 5px;
+}
+#submit:hover{
+    background-color: darkorange;
+    font-size: 24px;
+    border: 1px solid darkorange;
+}
+.recruiter{
+    background-color: #e4e4e4;
+    border-radius: 8px;
+    padding: 0 0 20px;
+    border-top: 1px dashed #8f8c94;
+}
+#reg-recruiter{
+    vertical-align: bottom;
+}

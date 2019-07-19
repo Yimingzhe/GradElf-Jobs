@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/signIn.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/javascripts/signIn.js"></script>
+</head>
+<body>
+<!--header-->
+<%- include("partials/elfHeader") %>
+
+<!--sign-in start-->
+<div class="sign-in container">
+    <form class="sign-in-left col-sm-5 col-xs-12">
+        <h3>Sign in</h3><br>
+        <label for="sign-in-email">Email:</label><br>
+        <input id="sign-in-email" name="email" type="email" autocomplete="on"><br>
+        <label for="sign-in-password">Password:</label><br>
+        <input id="sign-in-password" name="password" type="password" autocomplete="on"><br>
+        <a href="#"><span>Forgot password</span></a><br>
+        <input type="checkbox" name="keep" checked="checked">&nbsp;&nbsp;Keep me signed <br>
+        <input type="submit" id="sign-in-btn" name="sign-in" value="Sign in">
+    </form>
+    <div class="visible-xs col-xs-12 line-xs"></div>
+    <div class="hidden-xs col-sm-1 line-sm"></div>
+    <div class="sign-in-right col-sm-6 col-xs-12">
+        <h3><%= slogan %></h3>
+        <ul>
+            <li><span class="glyphicon glyphicon-ok sign-in-icon"></span><span><%= slogan1 %></span></li>
+            <li><span class="glyphicon glyphicon-ok sign-in-icon"></span><span><%= slogan2 %></span></li>
+            <li><span class="glyphicon glyphicon-ok sign-in-icon"></span><span><%= slogan3 %></span></li>
+        </ul>
+        <!--<input type="button" id="sign-up-btn" name="sign-up" value="Sign up">-->
+        <a href="/users/register"><div id="sign-up-btn">Sign up</div></a>
+    </div>
+</div>
+<!--sign-in end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>

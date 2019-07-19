@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="GradElf Jobs -- A job site dedicated to graduates in the UK">
+    <meta name="keywords" content="jobs, graduates, companies, find job, work, career">
+    <title>GradElf Jobs</title>
+    <!-- import bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/gradElf.css">
+    <!--import jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- import bootstrap js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <!--html5shiv and respond-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!--javascript of using cookies-->
+    <script src="/javascripts/cookies.js"></script>
+</head>
+<body>
+<!--header-->
+<%- include("partials/elfHeader") %>
+
+<!--search start-->
+<section class="elf-search">
+    <div class="job-search container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-education"></span>&nbsp; &nbsp;GradElf helps you find a job!</h2>
+        </div>
+        <div class="row">
+            <form id="searchJob" action="/result" method="get" autocomplete="off">
+                <span class="col-sm-2"></span>
+                <input class="col-sm-3 col-xs-12" type="text" name="keysearch" placeholder="Job title, company">
+                <input class="col-sm-3 col-xs-6" type="text" name="city" placeholder="City">
+                <button class="col-sm-2 col-xs-6" class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search hidden-lg hidden-xs"></span>
+                    <span class="visible-lg visible-xs">Search</span></button>
+            </form>
+        </div>
+        <div class="row">
+            <h3 class="hidden-xs">This is a professional website for graduates and companies!</h3>
+        </div>
+    </div>
+</section>
+<!--search end-->
+
+<!--tools start-->
+<section class="elf-tools">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <a href="/users/register"><span class="glyphicon glyphicon-thumbs-up"></span>
+                <p>Create an account now,
+                    <br>easily get the information on any device!</p>
+                <button>Register now</button>
+            </a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <a href="/profile"><span class="glyphicon glyphicon-file"></span>
+                <p>Now, create your own profile,
+                    <br>this is a new start for the future!</p>
+                <button>Create Profile</button>
+            </a>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <a href="/postRequest"><span class="glyphicon glyphicon-list-alt"></span>
+                <p>Create request at GradElf,
+                    <br>to find a wonderful job you need!</p>
+                <button>Create Request</button>
+            </a>
+        </div>
+    </div>
+</section>
+<!--tools end-->
+
+<!-- using cookies alert start-->
+<div id="cookie-alert" class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <b>GradElf uses cookies!</b> By continuing you are agreeing to our use of cookies.
+</div>
+<!--using cookies alert end-->
+
+<!--footer-->
+<%- include("partials/elfFooter") %>
+
+</body>
+</html>
