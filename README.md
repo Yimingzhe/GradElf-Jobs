@@ -38,4 +38,50 @@ GradElf是一个针对毕业生和招聘者的网站。当访问者没有登录�
   
 
 ## URL
-https://gradelf-jobs.herokuapp.com/
+网址： https://gradelf-jobs.herokuapp.com/
+<br/><br/>
+
+## Screenshots
+网站的部分截图展示<br/><br/>
+**Index 首页（未登录用户）**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/index.png)
+<br/><br/>
+**Result 搜索结果页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/search.png)
+<br/><br/>
+**Job Description 职位详情**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/jd.png)
+<br/><br/>
+**Company 公司详情**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/company.png)
+<br/><br/>
+**Register 注册页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/register.png)
+<br/><br/>
+**Sign In 登录页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/sign.png)
+<br/><br/>
+**Profile-jobseeker 求职者个人页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/profile-jobseeker.png)
+<br/><br/>
+**MyReviews (jobseeker) 求职者评论记录页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/review.png)
+<br/><br/>
+**Post Request (jobseeker) 求职者发布求职信息页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/request.png)
+<br/><br/>
+**Index (recruiter) 首页（招募者）**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/index-recruiter.png)
+<br/><br/>
+**Profile-recruiter 招募者个人页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/profile-recruiter.png)
+<br/><br/>
+**Request Description 求职详情**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/jd.png)
+<br/><br/>
+**Talent 求职者详情**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/talent.png)
+<br/><br/>
+**Post Job 招募者发布招聘信息页面**<br/><br/>
+![image](https://github.com/Yimingzhe/GradElf-Jobs/raw/master/screenshots/job.png)
+<br/><br/>
